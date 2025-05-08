@@ -30,19 +30,12 @@ function Main(){
     }
     potricule_timer = 0;
   }
-
-  BipkiL.textContent= "You have " +game.bipki.toFixed(1).toString()+ " Bipki";
-  BipkiIncreaseL.textContent= (game.potricule*0.1*game.potricule_speed).toFixed(1).toString() + " B/S";
+  UpdatePrices();
+  UpdateGUI();
 
   potricule_timer += delta*game.potricule_speed;
-   
-  if (game.bipki >= potricule_price){
-    PotriculeButton.style.color = "green";
-  }
-  if (game.bipki >= potricule_speed_price){
-    PotriculeSpeedButton.style.color = "green";
-  }
-  if (Date.now()-game.last_tick>= 2000){
+
+  if (Date.now()-game.last_tick>= 1000){ // оффлайн прогресс 
     let diff = Date.now() -game.last_tick;
     game.last_tick = Date.now();
     while (diff > 0){
@@ -50,6 +43,7 @@ function Main(){
       Main();
     };
   }
+
   game.last_tick = Date.now();
   autosave_timer += delta;
   if (autosave_timer >= 10){
@@ -59,34 +53,88 @@ function Main(){
 };
 
 
+function UpdatePrices(){
+  potricule_price = 5*game.potricule; //цены потрикул
+  if (game.potricule >= 10){
+    potricule_price = 10*game.potricule;
+  }
+  if (game.potricule >= 100){
+    potricule_price = (10**(Math.log10(game.potricule).toFixed(0)))*game.potricule;
+  }
 
+  potricule_speed_price = (game.potricule_speed*2)**3; //цены ускорений
+}
 
+function UpdateGUI(){
+  BipkiL.textContent= "You have " + NumberNotation(game.bipki)+ " Bipki";
+  BipkiIncreaseL.textContent= NumberNotation(game.potricule*0.1*game.potricule_speed) + " B/S";
+
+  PotriculeButton.textContent = NumberNotation(potricule_price);
+  if (game.bipki >= potricule_price){
+    PotriculeButton.style.color = "green";
+  }
+  else{
+    PotriculeButton.style.color = "red";
+  }
+
+  PotriculeSpeedButton.textContent = NumberNotation(potricule_speed_price);
+  if (game.bipki >= potricule_speed_price){
+    PotriculeSpeedButton.style.color = "green";
+  }
+  else{
+    PotriculeSpeedButton.style.color = "red";
+  }
+}
 
 function BuyPotricule(){
  if (game.bipki >= potricule_price){
   game.bipki-=potricule_price;
   game.potricule+=1;
-
-  potricule_price = 5*game.potricule
-
-  PotriculeButton.textContent = potricule_price.toFixed(0);
-  if (game.bipki < potricule_price){
-   PotriculeButton.style.color = "red";
-  }
+  UpdatePrices();
  }
 }
 
-
+function NumberNotation(number){
+  if (number < 1e+3){
+    return number.toFixed(1)
+  }
+  if (number < 1e+6){
+    return ((number*1e-3).toFixed(2)).toString()+"k";
+  }
+  if (number < 1e+9){
+    return ((number*1e-6).toFixed(2)).toString()+"M";
+  }
+  if (number < 1e+12){
+    return ((number*1e-9).toFixed(2)).toString()+"B";
+  }
+  if (number < 1e+15){
+    return ((number*1e-12).toFixed(2)).toString()+"Qa";
+  }
+  if (number < 1e+18){
+    return ((number*1e-15).toFixed(2)).toString()+"Qt";
+  }
+  if (number < 1e+21){
+    return ((number*1e-18).toFixed(2)).toString()+"Sx";
+  }
+  if (number < 1e+24){
+    return ((number*1e-21).toFixed(2)).toString()+"Sp";
+  }
+  if (number < 1e+27){
+    return ((number*1e-24).toFixed(2)).toString()+"Oc";
+  }
+  if (number < 1e+30){
+    return ((number*1e-27).toFixed(2)).toString()+"No";
+  }
+  if (number < 1e+33){
+    return ((number*1e-30).toFixed(2)).toString()+"Dec";
+  }
+};
 
 function BuyPotriculeSpeed(){
  if (game.bipki >= potricule_speed_price){
   game.bipki-=potricule_speed_price;
   game.potricule_speed*=2;
-  potricule_speed_price = (game.potricule_speed*2)**3 ;
-  PotriculeSpeedButton.textContent = potricule_speed_price;
-  if (game.bipki < potricule_speed_price){
-   PotriculeSpeedButton.style.color = "red";
-  }
+  UpdatePrices();
  }
 }
 
@@ -113,7 +161,8 @@ function EraseSave(){
 
 
 if (localStorage.getItem("bipkisave")){
- LoadGame()
+ LoadGame();
+ UpdatePrices();
 }
 
 

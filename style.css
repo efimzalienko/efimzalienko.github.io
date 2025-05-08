@@ -1,19 +1,17 @@
 #TheNumber {
-
   color: Green;
   font: 1.2em "Fira Sans", sans-serif;
   position: absolute;
-  left: 120px;
+  left: 900px;
   top: -15px;
   background-color:rgba(0,70,0,0.6);
 }
 
 #TheNumberIncrease{ 
-  
   font: 0.9em "Fira Sans", sans-serif;
   color:Green;
   position:absolute; 
-  left: 180px;
+  left: 970px;
   top: 5px;
   background-color:rgba(0,70,0,0.6);
 }
@@ -25,7 +23,7 @@
   color: Green;
   position:absolute; 
   left: 185px;
-  top: 105px;
+  top: 110px;
 }
 #BuyPotriculeSpeed{
 
@@ -34,7 +32,7 @@
   color: Red;
   position:absolute; 
   left: 185px;
-  top: 125px;
+  top: 130px;
 }
 
 #PotriculeLabel{
@@ -61,7 +59,7 @@
   color: Red;
   position:absolute; 
   left: 0px;
-  top: 800px;
+  top: 1060px;
 }
 
 
