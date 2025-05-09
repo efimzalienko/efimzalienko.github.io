@@ -6,7 +6,8 @@ var PotriculeButton= document.querySelector('#BuyPotricule');
 
 var PotriculeSpeedButton = document.querySelector('#BuyPotriculeSpeed');
 var NewsLetter = document.querySelector("#News");
-NewsLetter.addEventListener("animationend",NewsFinish)
+
+NewsLetter.addEventListener("animationend", () => {NewsFinish();});
 let game ={
  bipki: 0.0,
  potricule: 0,
@@ -51,10 +52,6 @@ function Main(){
   game.last_tick = Date.now();
   autosave_timer += delta;
   news_timer += delta;
-  if (news_timer >= 62){
-    news_timer = 0;
-    NewsFinish();
-  }
   if (autosave_timer >= 10){
     SaveGame();
     autosave_timer = 0;
@@ -225,5 +222,5 @@ if (localStorage.getItem("bipkisave")){
   UpdatePrices();
 }
 NewsLetter.textContent = news[getRandomInt(0, 39)];
-
+setInterval(NewsFinish, 60000);
 setInterval(Main, 16);
