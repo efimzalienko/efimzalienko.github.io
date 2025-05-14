@@ -21,7 +21,6 @@ var Skull = document.querySelector('#Skull');
 var PotriculeSpeedButton = document.querySelector('#BuyPotriculeSpeed');
 var NewsLetter = document.querySelector("#News");
 
-NewsLetter.addEventListener("animationend", () => {NewsFinish();});
 let game ={
  bipki: 0.0,
  potricule: 0,
@@ -72,7 +71,7 @@ function Main(){
   UpdateGUI();
 
   potricule_timer += delta*game.potricule_speed;
-  headki_timer += delta*game.headki_speed;
+  headki_timer += delta;
 
   if (Date.now()-game.last_tick>= 1000){ // оффлайн прогресс 
     let diff = Date.now() -game.last_tick;
