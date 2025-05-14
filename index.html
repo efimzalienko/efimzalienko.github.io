@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" type="image/png" href="/icon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
   <title>BIPKI</title>
@@ -10,12 +11,35 @@
   <h1 id="News">"Privet Dibio"</h1>
   <h1 class="box_round" id="TheNumber">0</h1>
   <h4 class="box_round" id="TheNumberIncrease">0</h4>
-  <h4 class="box_round" id="PotriculeLabel">Buy potricule</h4>
+
+  <h4 class="box_round" id="PotriculeLabel">Buy potricule </h4>
+  <button class="box_round BuyButton" id="BuyPotricule" onclick="BuyPotricule()">FREE</button>
+
   <h4 class="box_round" id="PotriculeSpeedLabel">Upgrade potricules</h4>
-  <img src="Bipka.gif" box_round" id="BipkaGif">asdasfasfafs</img>
-  <button id="BuyPotricule" onclick="BuyPotricule()">FREE</button>
-  <button id="BuyPotriculeSpeed" onclick="BuyPotriculeSpeed()">8</button>
-  <button id="DeleteEverything" onclick="EraseSave()">DeleteEverything</button>
-  <script src="script.js"></script>
+  <button class="box_round BuyButton" id="BuyPotriculeSpeed" onclick="BuyPotriculeSpeed()">8</button>
+
+  <img src="Bipka.gif" id="BipkaGif"> <h1 id="ProgressLabel" class="box_round">100%</h1></img>
+  <button class="box_round BuyButton" id = "PrestigeButton" onclick="Prestige()">GAIN HEADKI</button>
+  <div id ="Skull">
+    <h1 id="SkullLabel" class="box_round">0%</h1>
+    <p id="SkullPanel" class="box_round">
+      <button id="skull_buy_1" class="SkullPanelButton box_round" onclick="BuySkull1()" disabled="true"> Multiply Potricules Production by 4 <p class="skull_price" id="skull_price_1">10💀</p></button>
+      <button id="skull_buy_2" class="SkullPanelButton box_round" onclick="BuySkull2()" disabled="true"> 💀 max increases potricule production <p class="skull_price" id="skull_price_2">100💀</p></button>
+      <button id="skull_buy_3" class="SkullPanelButton box_round" onclick="BuySkull3()" disabled="true"> x2 Headki gain<p class="skull_price" id="skull_price_3">???💀</p></button>
+      <button id="skull_buy_4" class="SkullPanelButton box_round" onclick="BuySkull4()" disabled="true"> Remove potricule speed upgrade max <p class="skull_price" id="skull_price_4">1000💀</p></button>
+      <button id="skull_buy_5" class="SkullPanelButton box_round" onclick="BuySkull5()" disabled="true"> Increase Headki density <p class="skull_price" id="skull_price_5">???💀</p></button>
+      <button id="skull_buy_6" class="SkullPanelButton box_round" onclick="BuySkull6()" disabled="true"> Unlock Potricule Generator <p class="skull_price" id="skull_price_6">25.00k💀</p></button>
+      <button id="skull_buy_7" class="SkullPanelButton box_round" onclick="BuySkull7()" disabled="true"> Make potricule generator upgrade cheaper <p class="skull_price" id="skull_price_7">???💀</p></button>
+      <button id="skull_buy_8" class="SkullPanelButton box_round" onclick="BuySkull8()" disabled="true"> Make Potricules speed upgrade cost scale way better <p class="skull_price" id="skull_price_8">250.00k💀</p></button>
+      <button id="skull_buy_9" class="SkullPanelButton box_round" onclick="BuySkull9()" disabled="true"> MULTIPLY 💀 GAIN <p class="skull_price" id="skull_price_9">???💀</p></button>
+    </p>
+    <h1 id="SkullCount">0</h1>
+  </div>
+  <p id="VersionLabel" >ver 0.1</p>
+  <button class="box_round" id="DeleteEverything" onclick="EraseSave()">DeleteEverything</button>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/news.js"></script>
+  <script src="scripts/notation.js"></script>
+  <script src="scripts/skull_shop.js"></script>
 </body>
 </html>
