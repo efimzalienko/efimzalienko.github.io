@@ -53,10 +53,7 @@ function Main(){
   if (game.potricule_generator){
     game.potricule += 1*game.potricule_generator_multiplier;
   }
-  if (potricule_timer >= 1){
-    potricule_speed_gui = PotriculeTick();
-    potricule_timer = 0;
-  }
+  potricule_speed_gui = PotriculeTick();
 
   if (headki_timer >= 0.45){
     HeadkiTick();
@@ -69,8 +66,6 @@ function Main(){
 
   UpdatePrices();
   UpdateGUI();
-
-  potricule_timer += delta*game.potricule_speed;
   headki_timer += delta;
 
   if (Date.now()-game.last_tick>= 1000){ // оффлайн прогресс 
@@ -95,8 +90,8 @@ function Main(){
 
 
 function HeadkiTick(){
-  if (getRandomInt(1,100) >= 101 - (game.headki - 100*Math.floor(game.headk*0.01))){
-    game.skulls += (Math.floor(game.headki*0.01) + 1)*game.skulls_multiplier;
+  if (getRandomInt(1,100) >= 101 - game.headki){
+    game.skulls += 1*game.skulls_multiplier;
   }
   else{
     game.skulls += Math.floor(game.headki*0.01)*game.skulls_multiplier;
@@ -105,14 +100,12 @@ function HeadkiTick(){
 
 function PotriculeTick(){
   let diff = game.potricule;
-  diff *= 0.1;
-  if (game.potricule_speed >=64){
-    diff *= game.potricule_speed*0.03125;
-  }
+  diff *= 0.016667
+  diff *= game.potricule_speed;
   diff *= game.skull_potricule_multiplyer;
   diff *= game.skulls_max**(game.skulls_buff_bought*0.25);
   game.bipki += diff;
-  return diff
+  return diff*60
 }
 
 
@@ -120,11 +113,7 @@ function PotriculeTick(){
 
 
 function UpdatePrices(){
-
-  potricule_price = 5*game.potricule; //цены потрикул
-  if (game.potricule >= 10){
-    potricule_price = 10*game.potricule;
-  }
+  potricule_price = 10*game.potricule;
   if (game.potricule >= 100){
     potricule_price = (10**Math.floor(Math.log10(game.potricule)))*game.potricule
   }
@@ -134,10 +123,10 @@ function UpdatePrices(){
 
 
   if (game.potricule_speed_upgrade){
-    potricule_speed_price = (game.potricule_speed*2)**2.2;
+    potricule_speed_price = (game.potricule_speed*2+8)**2.2;
   }
   else{
-    potricule_speed_price = (game.potricule_speed*2)**3; 
+    potricule_speed_price = (game.potricule_speed*2+8)**3; 
   }
 }
 
@@ -251,7 +240,7 @@ function EraseSave(){
     potricule: 0,
     potricule_speed: 1,
     last_tick: Date.now(),
-    headki:0,
+    headki:99,
     skulls:0,
     potricule_speed_upgrade:false,
     potricule_speed_max_upgrade:false,
