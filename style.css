@@ -1,0 +1,209 @@
+#TheNumber {
+  text-align: center;
+  color: Green;
+  font: 1.2em "Fira Sans", sans-serif;
+  position: relative;
+  top: -15px;
+  background-color:rgba(0,70,0,0.6);
+}
+#News {
+  position: relative;
+  top: -5px;
+  font: 0.9em "Fira Sans", sans-serif;
+  color: red;
+}
+#TheNumberIncrease{ 
+  font: 0.9em "Fira Sans", sans-serif;
+  color:Green;
+  text-align: center;
+  position: relative;
+  top: -30px;
+  background-color:rgba(0,70,0,0.6);
+}
+
+#BuyPotricule{
+  font: 0.9em "Fira Sans", sans-serif;
+  color: Green;
+}
+#BuyPotriculeSpeed{
+  font: 0.9em "Fira Sans", sans-serif;
+  color: Red;
+}
+
+#PotriculeLabel{
+  position: relative;
+  font: 1.2em "Fira Sans", sans-serif;
+  color: #00aaff;
+  text-align: left;
+  width: 300px;
+  top: 25px;
+  background-color:rgba(0,0,70,0.6);
+}
+
+#PotriculeSpeedLabel{
+  position: relative;
+  font: 1.2em "Fira Sans", sans-serif;
+  color: #00aaff;
+  text-align: left;
+  width: 300px;
+  top: 25px;
+  background-color:rgba(0,0,70,0.6);
+}
+
+#DeleteEverything{
+  font: 0.9em "Fira Sans", sans-serif;
+  color: Red;
+  justify-self:bottom;
+}
+
+@keyframes marquee {
+  from { text-indent: 100%; }
+  to { text-indent: -125%; }
+}
+#BipkaGif{
+  position: relative;
+  display: block;
+  z-index: -1;
+  top: -115px;
+  left: 5px;
+  width: 10%;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+}
+
+#ProgressLabel{
+  font: 3em "Fira Sans", sans-serif;
+  position: relative;
+  color: green;
+  text-align: center;
+  background-color: rgba(0,70,0,0.6);
+  background-size: 35%;
+  background-position: center;
+  background-repeat: repeat-x;
+  width: 180px;
+  top: -50px;
+  justify-self: center;
+}
+#PrestigeButton{
+  display: flex;
+  justify-content: center;
+  justify-self:center;
+  position: relative;
+  top: -80px;
+  width: 180px;
+  margin: 0;
+  color: azure;
+  background-image: linear-gradient(#252525, #000);
+  border-color: #ffffff;
+}
+*{
+  box-sizing: border-box;
+}
+
+
+#Skull{
+  content-visibility: hidden;
+}
+#SkullCount{
+  position: relative;
+  text-align: center;
+  width: 386px;
+  justify-self: right;
+  top: -910px;
+  font: 1em "Fira Sans", sans-serif;
+  color: white;
+}
+#SkullLabel{
+  position: relative;
+  text-align: center;
+  width: 386px;
+  justify-self: right;
+  top: -440px;
+  background-image: linear-gradient(rgba(0,70,0,0.6),rgba(120,140,120,0.6));
+  font: 1.25em "Fira Sans", sans-serif;
+  max-height: 75px;
+  height: 75px;
+  margin-bottom: 35px;
+  color: white;
+}
+#SkullPanel{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: minmax(120px, auto);
+  justify-self: right;
+  justify-items: space-between;
+  width: 386px;
+  height: 380px;
+  position: relative;
+  top: -470px;
+  background: linear-gradient(rgba(120,140,120,0.6), rgba(0,70,0,0.6));
+}
+.SkullPanelButton{
+  box-sizing: border-box;
+  justify-content: space-around;
+  margin: auto;
+  position: relative;
+  font: 0.6em "Fira Sans", sans-serif;
+  padding: 0%;
+  color: #fff;
+  background: linear-gradient(#252525, #000);
+  max-width: 120px;
+  max-height: 120px;
+  width: 120px;
+  height: 120px;
+}
+.SkullPanelButton:disabled{
+  background: #000;
+}
+.SkullPanelButton:active{
+  background: #000;
+}
+.skull_price{
+  position: relative;
+  top: 25px;
+}
+
+
+body{
+  zoom: 150%;
+  background-image: linear-gradient(#000, #002500);
+  background-repeat: repeat;
+  background-size:cover;
+  background-attachment: fixed;
+}
+
+
+#News{
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+#VersionLabel{
+  font: 0.6em "Fira Sans", sans-serif;
+  justify-self: right;
+  position: relative;
+  top: 45px;
+  color: (#0f0);
+}
+
+.BuyButton{
+  display: flex;
+  justify-content: center;
+  justify-self: left;
+  margin: 0;
+  width: 300px;
+  border-color: #00aaff;
+  background-image: linear-gradient(#000025, #000);
+  background-repeat: no-repeat;
+  background-attachment:initial;
+}
+.BuyButton:active{
+  background-image: linear-gradient(#000000, #000);
+}
+.box_round {
+  border-radius: 6px; 
+} 
