@@ -24,10 +24,10 @@ let prices = [10, 100, 150, 1000, 5000, 25000, 1e+5,25e+4,5e+5];
 
 function UpdateSkullShop(){
     prices[0] = (10**(game.skull_potricule_multiplyer**0.5)).toFixed(0);
-    prices[2] = (game.headki_multpilier**2)*200;
-    prices[4] = 150*((game.headki_factor)**6);
+    prices[2] = (game.headki_multpilier**2.2)*300;
+    prices[4] = 150*((3-game.headki_factor)**6);
     prices[6] = 1e+6*(game.potricule_generator_price**-1);
-    prices[8] = 5e+5*game.skulls_multiplier**2
+    prices[8] = 5e+5*game.skulls_multiplier**3
     skull_price_1.textContent = NumberNotation(prices[0],2,true) + "💀";
     skull_price_3.textContent = NumberNotation(prices[2],2,false) + "💀";
     skull_price_5.textContent = NumberNotation(prices[4],2,false) + "💀";

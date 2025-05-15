@@ -9,7 +9,7 @@ const news =
     "Privet 💀",
     "Privet Efimza",
     "Privet Gig",
-    "Privet Vitas2222222222222222222222222222222222222222222222222222222222222222222",
+    "Privet Vitas22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222",
     "Privet Илья",
     "Privet Bipka",
     "Privet ArtZack",
@@ -42,7 +42,7 @@ const news =
     "Vitas22222: There seems to be a deep plot here",
 
     "Ligime",
-    "One potricule produces 0.1 Bipki, thats everything we know about them",
+    "One potricule produces 1 Bipki, thats everything we know about them",
     "Bipki are extremely powerful and useful, aaaaaaand you can't make em...                                                                              ...but potricules can!",
     "Fishy game",
     "MOAR Bipki",
@@ -76,7 +76,13 @@ const news =
     "Плохие новости (Sadge)",
     "Potricules have sort of hive mind, they are producing Bipki synchronously",
     "А там Бипки",
-    "If you reading this close this tab NOW, if you don't do this your heart stop in 10 seconds"
+    "If you reading this close this tab NOW, if you don't do this your heart stop in 10 seconds",
+    "It depends",
+    "Living just in case things get better",
+    "Obey",
+    "Mine craft",
+    "Rock and stone!",
+    "В ЭТУ ИГРУ МОЖНО ДАЖЕ НЕ ИГРАТЬ ОНА САМА СЕБЯ ПРОЙДЁТ 0/10"
 
 
 ]

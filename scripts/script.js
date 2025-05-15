@@ -91,7 +91,7 @@ function Main(){
 
 function HeadkiTick(){
   if (getRandomInt(1,100) >= 101 - game.headki){
-    game.skulls += 1*game.skulls_multiplier;
+    game.skulls += (Math.floor(game.headki*0.01)+1)*game.skulls_multiplier;
   }
   else{
     game.skulls += Math.floor(game.headki*0.01)*game.skulls_multiplier;
@@ -165,7 +165,7 @@ function UpdateGUI(){
     let headki = Math.floor(Math.log2(game.bipki*(1e-6))/Math.log2(game.headki_factor)+1);
     PrestigeButton.style.visibility = "visible";
     ProgressLabel.textContent = NumberNotation(100 - (((game.headki_factor**(headki)*1e+6) - game.bipki) / ( game.headki_factor**(headki)*1e+6 -game.headki_factor**(headki-1)*1e+6))*100) +"%";
-    PrestigeButton.textContent = "Gain Headki: "+ NumberNotation(headki*game.headki_multpilier,2,true);
+    PrestigeButton.textContent = "Gain Headki: "+ NumberNotation(headki*game.headki_multpilier*Math.floor(Math.log2(game.bipki*1e-6) / Math.log2(game.headki_factor) *0.2+1),2,true);
   }
 
 
@@ -218,7 +218,7 @@ function BuyPotriculeSpeed(){
 
 
 function Prestige(){
-  game.headki += Math.floor(Math.log2(game.bipki*(1e-6))/Math.log2(game.headki_factor)+1)*game.headki_multpilier;
+  game.headki += Math.floor(Math.log2(game.bipki*(1e-6))/Math.log2(game.headki_factor)+1)*game.headki_multpilier*Math.floor(Math.log2(game.bipki*1e-6) / Math.log2(game.headki_factor) *0.2+1);
   game.potricule = 0;
   game.bipki = 0;
   game.potricule_speed = 1;
@@ -240,7 +240,7 @@ function EraseSave(){
     potricule: 0,
     potricule_speed: 1,
     last_tick: Date.now(),
-    headki:99,
+    headki:0,
     skulls:0,
     potricule_speed_upgrade:false,
     potricule_speed_max_upgrade:false,
