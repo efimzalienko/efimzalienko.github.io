@@ -1,1 +1,1 @@
-права на бипки пренадлежат Ligime
+made by Ligime
